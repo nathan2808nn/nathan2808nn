@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja BYD</title>
+    <style>
+        /* Reset de margens e padding */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo para o fundo e o efeito parallax */
+        .parallax {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://mundodoautomovelparapcd.com.br/wp-content/uploads/2024/06/BYD-King-PHEV-7-1152x648.jpg");
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            transform: translateY(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            color: #fffbfb;
+            padding: 50px;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 150px;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .product-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .product {
+            width: 280px;
+            margin: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .product-info p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax" id="parallax"></div>
+    <div class="content">
+        <header>
+            <h1>Bem-vindo à Loja BYD</h1>
+            <p>Explore os melhores carros elétricos e tecnologias de ponta.</p>
+        </header>
+
+        <div class="product-section">
+            <div class="product">
+                <img src="download - Copia.jpg" alt="Carro 1">
+                <div class="product-info">
+                    <h3>BYD Tan EV</h3>
+                    <p>O SUV elétrico da BYD</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="images.jpg" alt="Carro 2">
+                <div class="product-info">
+                    <h3>BYD Qin Pro</h3>
+                    <p>Seda elétrico inovador</p>
+                </div>
+            </div>
+
+            <div class="product">
+               <img src="byd-yuan-pro-dianteira-movimento-02.avif" alt="Carro 2">
+               <div class="product-info">
+                   <h3>BYD YUAN PRO</h3>
+                   <p>Seda elétrico inovador</p>
+               </div>
+           </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const parallax = document.getElementById("parallax");
+            const scrollPosition = window.scrollY; 
+            parallax.style.transform = translateY(${scrollPosition * 0.5}px); 
+        });
+    </script>
+</body>
+<footer>
+   <a href="#">Sobre</a>
+   <a href="#">Contato</a>
+   <a href="#">Termos e Condições</a>
+   <p>&copy; 2025 Loja BYD. Todos os direitos reservados.</p>
+</footer>
+
+</html>
