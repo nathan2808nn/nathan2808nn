@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculatora</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header text-center bg-primary text-white">
+        <h2>Calculatora</h2>
+    </div>
+    <div class="card-body">
+        <form id="calculator-form">
+            <div class="mb-3">
+                <label for="number1" class="form-label">Número 1</label>
+                <input type="number" id="number1" class="form-control" placeholder="Digite o Primeiro número" required>
+                </div>
+                <div class="mb-3">
+<label for="number2" class="form-label">Número 2</label>
+<input type="number" id="number2" class="form-control" placeholder="Digite o Segundo número" required>
+            </div>
+            <div class="mb-3">
+                <label for="operation" class="form-label">Operação</label>
+                <select id="operation" class="form-select" required>
+                    <option value="add">Adição (+)</option>
+                    <option value="subtract">Subtração (-)</option>
+                    <option value="multiply">Multiplicação (*)</option>
+                    <option value="divide">Divisão (/)</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="calculate()">Calcular</button>
+            </div>
+        </form>
+        </div>
+        <div class="card-footer text-center">
+            <h4 id="result">Resultado: </h4>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function calculate() {
+        const number1= parseFloat(document.getElementById('number1').value);
+        const number2 = parseFloat(document.getElementById('number2').value);
+        const operation = document.getElementById('operation').value;
+        let result;
+
+        if (isNaN(number1) || isNaN(number2)) {
+            result = 'Por favor, insira número válido.';
+        } else {
+          switch (operation) {
+            case 'add':
+                result = number1 + number2;
+                break;
+            case 'subtract':
+                result = number1 - number2;
+                break;
+            case 'multiply':
+                result = number1 * number2;
+                break;
+            case 'divide':
+                result = number2 !== 0 ? number1 / number2: 'Error: Division by zero';
+                break;
+                default:
+                    result = 'Operação Inválida.';
+        }
+      }
+      document.getElementById('result').textContent = Resultado: ${result};
+    }
+  </script>
+</body>
+</html>
