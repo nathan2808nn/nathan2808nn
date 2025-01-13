@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input [type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #qrcode img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gerador de QR Code</h1>
+        <input type="text" id="link" placeholder="Digite o link aqui">
+        <button onclick="gerarQRCode()">Gerar QR Code</button>
+        <div id="qrcode"></div>
+    </div>
+    <script>
+        function gerarQRCode() {
+            var link = document.getElementById('link').value;
+
+            if (link) {
+                // Limpar o QRCode anterior
+                document.getElementById('qrcode').innerHTML = '';
+
+                // Gerar o Qr code com o link inserido  e mostrar como imagem
+                QRCode.toDataURL(link, function (error, url) {
+                    if (error) {
+                        console.error(error);
+                    } else {
+                        // Adiciona a imagem do QR Code à página
+                        var img = document.createElement('img');
+                        img.src = url;
+                        document.getElementById('qrcode').appendChild(img);
+                    }
+                });
+            } else {
+                alert("Por favor, insira um link para gerar o QR Code.");
+            }
+        }
+    </script>
+</body>
+
+</html>
