@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat do Petshop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .chat-box {
+            max-width: 400px;
+            overflow-y: auto;
+        }
+        .chat-input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Chat do Petshop</h2>
+        <div class="card">
+            <div class="card-body chat-box" id="chat-box">
+                <!-- Chat messages will be dynamically added here -->
+            </div>
+            <div class="card-footer">
+                <input type="text" id="user-input" class="form-control chat-input" placeholder="digite sua mensagem...">
+                <button class="btn btn-primary mt-2" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+
+        function sendMessage() {
+            const userMessage = userInput.value;
+            if (userMessage.trim() !== '') {
+                addMessage('Você', userMessage);
+                getBotResponse(userMessage);
+                userInput.value = '';
+            }
+        }
+        
+        function addMessage(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('mb-2');
+            messageElement.innerHTML = <strong>${sender}:</strong> ${message};
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+    let response = '';
+    switch (message.toLowerCase()) {
+        case 'qual são os horários de funcionamento da loja?':
+            response = 'Nossa loja funciona de segunda a sexta, das 9h às 18h, e aos sábados, das 9h às 14h. Estamos fechados aos domingos e feriados.';
+            break;
+        case 'vocês oferecem serviços de banho e tosa?':
+            response = 'Sim, oferecemos serviços de banho e tosa para cães e gatos. Você pode agendar um horário pelo nosso site ou ligando para a loja.';
+            break;
+        case 'quais são as formas de pagamento aceitas?':
+            response = 'Aceitamos pagamentos em dinheiro, cartão de crédito e débito, além de transferências bancárias.';
+            break;
+        case 'vocês vendem rações específicas para animais com necessidades especiais?':
+            response = 'Sim, temos uma variedade de rações para animais com necessidades especiais, como dietas para controle de peso, alergias alimentares e problemas renais.';
+            break;
+        case 'vocês fazem entregas?':
+            response = 'Sim, oferecemos serviço de entrega para compras acima de R$ 50,00. As entregas são feitas em até 48 horas após a confirmação do pedido.';
+            break;
+        default:
+            response = 'Desculpe, não entendi sua pergunta. Pode reformular?';
+    }
+    addMessage('bot', response);
+}
+    </script>
+</body>
+</html>
