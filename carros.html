@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros Incríveis</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e60023;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('car-hero.jpg') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Galeria de Carros */
+        .gallery, .promo {
+            padding: 40px 20px;
+            text-align: center;
+            background: #f4f4f4;
+        }
+
+        .gallery h2, .promo h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .car-grid, .promo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .car-card, .promo-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .car-card:hover, .promo-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .car-card img, .promo-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .car-card h3, .promo-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .car-card p, .promo-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .promo-card .price {
+            color: #e60023;
+            font-weight: bold;
+        }
+
+        .promo-card .discount {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .car-card, .promo-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .car-card, .promo-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo-carros.png" alt="Logo Carros Incríveis">
+        </div>
+        <nav>
+            <a href="#gallery">Galeria</a>
+            <a href="#promo">Promoções</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Descubra os melhores carros do mundo</h1>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Nossa Coleção</h2>
+        <div class="car-grid">
+        
+            <div class="car-card">
+                <img src="img-364681-ferrari-488-gtb.jpg" alt="Ferrari 488 GTB">
+                <h3>Ferrari 488 GTB</h3>
+                <p>Velocidade e elegância em um só carro.</p>
+            </div>
+
+            <div class="car-card">
+                <img src="lamborghini-aventador-lp750-4-superveloce.jpg" alt="Lamborghini Aventador">
+                <h3>Lamborghini Aventador</h3>
+                <p>Design agressivo e desempenho impressionante.</p>
+            </div>
+
+            <div class="car-card">
+                <img src="2025-porsche-911-carrera-gts-101-668d444c83859.avif" alt="Porsche 911">
+                <h3>Porsche 911</h3>
+                <p>O clássico esportivo que nunca sai de moda.</p>
+            </div>
+ 
+            <div class="car-card">
+                <img src="20180630_Tesla_Model_S_70D_2015_midnight_blue_left_front.jpg" alt="Tesla Model S">
+                <h3>Tesla Model S</h3>
+                <p>Inovação e tecnologia em um carro elétrico.</p>
+            </div>
+      
+            <div class="car-card">
+                <img src="Audi-R8-GT-ok.avif" alt="Audi R8">
+                <h3>Audi R8</h3>
+                <p>Desempenho e sofisticação alemã.</p>
+            </div>
+       
+            <div class="car-card">
+                <img src="BMW M4 2025 UK review -8.webp" alt="BMW M4">
+                <h3>BMW M4</h3>
+                <p>Esportividade e conforto em um só carro.</p>
+            </div>
+            
+            <div class="car-card">
+                <img src="2017-06-02-20170531-3e8b3e514fd243129726de902b920270-gt-c-roadster.webp" alt="Mercedes-AMG GT">
+                <h3>Mercedes-AMG GT</h3>
+                <p>Luxo e desempenho em um carro esportivo.</p>
+            </div>
+    
+            <div class="car-card">
+                <img src="ford-mustang-eu-bronze_pack_overview_card-3x2-1000x667.jpg" alt="Ford Mustang">
+                <h3>Ford Mustang</h3>
+                <p>O ícone americano de potência e estilo.</p>
+            </div>
+      
+            <div class="car-card">
+                <img src="55d7c6712dd34ec5837bc2126d9e8702_1730315514940.jpeg" alt="Chevrolet Corvette">
+                <h3>Chevrolet Corvette</h3>
+                <p>Um clássico moderno com desempenho excepcional.</p>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="promo" class="promo">
+        <h2>Promoções</h2>
+        <div class="promo-grid">
+          
+            <div class="promo-card">
+                <img src="chevrolet-corvette-zr1-n-a-9.jpg" alt="Promoção 1">
+                <h3>Ferrari 488 GTB</h3>
+                <p class="price">De R$ 1.500.000</p>
+                <p class="discount">Por R$ 1.200.000</p>
+            </div>
+     
+            <div class="promo-card">
+                <img src="promo2.jpg" alt="Promoção 2">
+                <h3>Lamborghini Aventador</h3>
+                <p class="price">De R$ 2.000.000</p>
+                <p class="discount">Por R$ 1.800.000</p>
+            </div>
+           
+            <div class="promo-card">
+                <img src="promo3.jpg" alt="Promoção 3">
+                <h3>Porsche 911</h3>
+                <p class="price">De R$ 800.000</p>
+                <p class="discount">Por R$ 700.000</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Carros Incríveis. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
